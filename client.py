@@ -118,14 +118,14 @@ class Client_commands():
         2 - Получить N кол во картинок
         3 - Отключится от сервера.
         """)
-        func = {"1": self.get_image,
-                "2": self.get_images,
-                "3": self.conn.close
-                }.get(input("Выбраем:"))
-        if func:
-            func()
-        else:
-            return
+        inpunt_str = int(input("Выбраем:"))
+        if inpunt_str == 1:
+            self.get_image()
+        elif inpunt_str == 2:
+            self.get_images()
+        elif inpunt_str == 3:
+            self.conn.close()
+            exit(1)
 
 
 

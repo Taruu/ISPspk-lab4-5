@@ -47,8 +47,6 @@ class Server_commands():
             image_data = requests.get(f"https://nekos.moe/image/{image_id}").content
             print(f"get image: {image_id}.jpeg {count}/{count_download}")
             if self.SF.image_hash_check(image_hash_orginal,image_data):
-
-
                 list_images.append({"id":image_id,
                                     "originalHash":image_hash_orginal,
                                     "data": base64.b64encode(image_data).decode()})
