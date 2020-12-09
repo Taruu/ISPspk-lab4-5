@@ -1,4 +1,3 @@
-import asyncio
 import json
 import socket
 import base64
@@ -83,12 +82,9 @@ class Client_commands():
 
 
     def get_images(self):
-
         self.send_json({"COMMAND": "GET_IMAGES",
                         "COUNT": int(input("Ведите кол во картинок: "))})
         data = self.recv_json()
-
-
         if not data.get("RELPY"):
             return None
         if data["RELPY"] == "ERROR_HTTPS":

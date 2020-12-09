@@ -1,9 +1,5 @@
 import requests
 import base64
-import shutil
-from PIL import Image
-from io import BytesIO
-import hashlib
 import json
 import sys
 class SysFunction():
@@ -34,27 +30,6 @@ class Server_commands():
             return image[0]
         else:
             return None
-        # data = requests.get("https://nekos.moe/api/v1/random/image", params={"nsfw": "false", "count": "1"})
-        # if data.status_code != 200:
-        #     return None
-        # id_image = data.json()["images"][0]["id"]
-        # hashoriginal = data.json()["images"][0]["originalHash"]
-        # data = requests.get(f"https://nekos.moe/image/{id_image}")
-        # # print(data.content)
-        # # print(hashoriginal,hashlib.md5(data.content).hexdigest())
-        # # i = Image.open(BytesIO(data.content))
-        # # i.show()
-        # # i.save("test.jpeg")
-        # # with open('image_name.jpg', 'wb') as handler:
-        # #     handler.write(data.content)
-        #
-        # if self.SF.image_hash_check(hashoriginal,data.content):
-        #     return {"id": id_image,
-        #             "originalHash": hashoriginal,
-        #             "data": base64.b64encode(data.content).decode()
-        #             }
-        # else:
-        #     return False
 
 
 
