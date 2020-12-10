@@ -1,35 +1,3 @@
-# import asyncio
-
-#
-# class Server_connection(asyncio.Protocol):
-#     def connection_made(self, transport):
-#         peername = transport.get_extra_info('peername')
-#         print('Подключен клиент по {}'.format(peername))
-#         self.transport = transport
-#         self.sf = Server_function(self.transport)
-#
-#     def data_received(self, data):
-#         message = data.decode()
-#         self.sf.take_action(message)
-#
-#
-#
-#
-#
-# async def main():
-#     # Получаем ссылку на цикл событий, т.к. планируем
-#     # использовать низкоуровневый API.
-#     loop = asyncio.get_running_loop()
-#
-#     server = await loop.create_server(
-#         lambda: Server_connection(),
-#         '127.0.0.1', 8888)
-#
-#     async with server:
-#         await server.serve_forever()
-#
-# asyncio.run(main())
-
 from serverfunc.function_commands import Server_function
 import socket
 
