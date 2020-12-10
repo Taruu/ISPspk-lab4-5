@@ -17,6 +17,7 @@ while True:
             data = conn.recv(4096)
             sf.take_action(data)
         except:
+            print("client lost")
             break
         if not data:
             break
