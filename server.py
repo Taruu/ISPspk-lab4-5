@@ -12,8 +12,9 @@ while True:
     print('connected:', addr)
     while True:
         print("wait command")
-        data = conn.recv(4096)
+
         try:
+            data = conn.recv(4096)
             sf.take_action(data)
         except:
             break
