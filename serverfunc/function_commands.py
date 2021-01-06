@@ -37,6 +37,7 @@ class Server_commands():
         list_images = []
         count_download = 0
         data = requests.get("https://nekos.moe/api/v1/random/image", params={"nsfw": "false", "count": str(count)})
+        #docs https://docs.nekos.moe/#using-the-api
         if data.status_code != 200:
             return None
 
